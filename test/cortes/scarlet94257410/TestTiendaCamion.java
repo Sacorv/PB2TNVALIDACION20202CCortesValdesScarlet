@@ -18,6 +18,7 @@ public class TestTiendaCamion {
 	@Test
 	public void queSeObtengaUnreporteAlHAcerUnCierreZ() throws CajaCerradaException, ProductoInexistenteException {
 		TiendaCamion tienda = new TiendaCamion("33");
+		tienda.abrirCaja();
 		Producto prod1 = new Producto(2, 100.0, "mesa", 20.0);
 		Producto prod2 = new Producto(3, 100.0, "mesa", 20.0);
 		Producto prod3 = new Producto(5, 100.0, "mesa", 20.0);

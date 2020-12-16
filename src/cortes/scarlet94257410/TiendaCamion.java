@@ -42,6 +42,12 @@ public class TiendaCamion  extends Camion implements ITienda{
 	}
 
 	@Override
+	public Boolean cargarProducto(Producto producto) {
+		
+		return this.ventas.add(producto);
+	}
+	
+	@Override
 	public void vender(Integer idProducto) throws CajaCerradaException, ProductoInexistenteException {
 		Producto prodBuscado = buscarProducto(idProducto);
 		
