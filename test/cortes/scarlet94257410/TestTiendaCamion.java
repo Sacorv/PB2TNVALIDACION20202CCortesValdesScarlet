@@ -29,8 +29,10 @@ public class TestTiendaCamion {
 		tienda.vender(3);
 		tienda.vender(5);
 		
-		System.out.println(tienda.cierreZ().imprimirReporte());
+		Double valorEsp = 300.0;
+		Double valorObt = tienda.cierreZ().getTotalNeto();
 		
+		assertEquals(valorEsp, valorObt);
 	}
 	
 

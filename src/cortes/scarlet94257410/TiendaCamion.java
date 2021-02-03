@@ -33,7 +33,7 @@ public class TiendaCamion  extends Camion implements ITienda{
 
 	public Producto buscarProducto(Integer idProducto) {
 		Producto prodBuscado = null;
-		for(Producto prod : this.ventas) {
+		for(Producto prod : this.getListaProductos()) {
 			if(prod.getId().equals(idProducto)) {
 				prodBuscado = prod;
 			}
@@ -41,17 +41,18 @@ public class TiendaCamion  extends Camion implements ITienda{
 		return prodBuscado;
 	}
 
-	@Override
-	public Boolean cargarProducto(Producto producto) {
-		
-		return this.ventas.add(producto);
-	}
+//	@Override
+//	public Boolean cargarProducto(Producto producto) {
+//		
+//		//return this.ventas.add(producto);
+//		return this.getListaProductos().add(producto);
+//	}
 	
 	@Override
 	public void vender(Integer idProducto) throws CajaCerradaException, ProductoInexistenteException {
 		Producto prodBuscado = buscarProducto(idProducto);
 		
-		if(this.estadoDeCaja = false) {
+		if(this.estadoDeCaja == false) {
 			throw new CajaCerradaException("La caja esta cerrada, no se puede vender antes debe abrir la caja");
 		}
 		if(prodBuscado==null) {
@@ -75,7 +76,6 @@ public class TiendaCamion  extends Camion implements ITienda{
 		Double totalIva = totalNeto*iva;
 		
 		Reporte reporteDelDia = new Reporte(totalVentas, totalIva, totalNeto);
-		//reporteDelDia.imprimirReporte();
 		
 		return reporteDelDia;
 	}

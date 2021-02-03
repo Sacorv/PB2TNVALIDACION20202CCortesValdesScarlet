@@ -48,12 +48,11 @@ public class Camion  {
 			}
 			else {
 				productoBuscado = producto;
-				
-				this.listaProductos.remove(productoBuscado);
 			}
 		}
+		this.listaProductos.remove(productoBuscado);
 		
-		return productoBuscado; //devuelve el producto??? 
+		return productoBuscado; 
 	}
 	
 
